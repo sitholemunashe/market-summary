@@ -2,8 +2,8 @@ const axios = require('axios');
 const nodemailer = require('nodemailer');
 
 // Your API Keys and email
-const FINNHUB_API_KEY = 'd75e15d07e2748b1a8a89af9f913e327';
-const EXCHANGE_RATES_API_KEY = 'd91mivpr01qnefofne10d91mivpr01qnefofne1g';
+const FINNHUB_API_KEY = '76b14f38bf154a029fa59689ddbb8156';
+   const EXCHANGE_RATES_API_KEY = 'd91qg31r01qnchjo1ut0d91qg31r01qnchjo1utg';
 const EMAIL = 'sitholemunashe@gmail.com';
 const GMAIL_APP_PASSWORD = process.env.GMAIL_APP_PASSWORD; // We'll set this up in GitHub
 
