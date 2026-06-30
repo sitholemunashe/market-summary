@@ -1,0 +1,28 @@
+name: Daily Market Summary
+
+# Runs every day at 2 AM UTC = 6 AM Mauritius time (UTC+4)
+on:
+  schedule:
+    - cron: '0 2 * * *'
+  workflow_dispatch: # Allows manual trigger for testing
+
+jobs:
+  market-summary:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      
+      - name: Install dependencies
+        run: npm install
+      
+      - name: Run market summary
+        run: npm start
+        env:
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
